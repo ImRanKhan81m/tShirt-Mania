@@ -10,9 +10,21 @@ const Home = () => {
 
 
     const handleAddToCart = (selectedItem) => {
-        const newCart = { ...cart, selectedItem }
-        setCart(newCart)
+        const exist = cart.find(tShirt => tShirt._id === selectedItem._id);
+        if (!exist) {
+            const newCart = [...cart, selectedItem];
+            setCart(newCart)
+        }else{
+            alert('item alreadt added!')
+        }
+
     }
+
+    const handleRemoveCart = (selectedItem) => {
+        const rest = cart.filter(tShirt => tShirt._id !== selectedItem._id);
+        setCart(rest)
+    }
+
 
     return (
         <div className='home-container'>
@@ -26,8 +38,8 @@ const Home = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart
-                    cart={cart}
+                <Cart cart={cart}
+                    handleRemoveCart={handleRemoveCart}
                 ></Cart>
             </div>
 
