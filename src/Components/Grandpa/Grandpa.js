@@ -17,7 +17,8 @@ const Grandpa = () => {
     }
 
     return (
-        <div className='grandpa'>
+        <RingContext.Provider>
+            <div className='grandpa'>
             <h2>Grandpa</h2>
             <p>House: {house}</p>
             <button onClick={handleBuyHouse}>Buy A House</button>
@@ -27,6 +28,7 @@ const Grandpa = () => {
                 <Aunty house={house}></Aunty>
             </div>
         </div>
+        </RingContext.Provider>
     );
 };
 
