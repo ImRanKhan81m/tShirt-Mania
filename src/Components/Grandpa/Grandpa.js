@@ -4,7 +4,7 @@ import Uncle from '../Uncle/Unlce';
 import Father from '../Father/Father';
 import Aunty from '../Aunty/Aunty'
 
-const RingContext = createContext('diamond')
+export const RingContext = createContext('diamond')
 
 const Grandpa = () => {
     const [house, setHouse] = useState(1);
@@ -17,7 +17,7 @@ const Grandpa = () => {
     }
 
     return (
-        <RingContext.Provider value='Golden Ring'>
+        <RingContext.Provider value={ornaments}>
             <div className='grandpa'>
                 <h2>Grandpa</h2>
                 <p>House: {house}</p>
