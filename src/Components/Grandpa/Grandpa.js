@@ -17,7 +17,7 @@ const Grandpa = () => {
     }
 
     return (
-        <RingContext.Provider>
+        <RingContext.Provider value='Golden Ring'>
             <div className='grandpa'>
                 <h2>Grandpa</h2>
                 <p>House: {house}</p>
