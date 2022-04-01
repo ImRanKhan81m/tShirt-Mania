@@ -11,23 +11,23 @@ const Grandpa = () => {
 
     const ornaments = 'Diamond Ring';
 
-    const handleBuyHouse = ()=>{
+    const handleBuyHouse = () => {
         const newHouse = house + 1;
-        setHouse (newHouse)
+        setHouse(newHouse)
     }
 
     return (
         <RingContext.Provider>
             <div className='grandpa'>
-            <h2>Grandpa</h2>
-            <p>House: {house}</p>
-            <button onClick={handleBuyHouse}>Buy A House</button>
-            <div style={{ display: 'flex' }}>
-                <Father house={house} ornaments={ornaments}></Father>
-                <Uncle house={house}></Uncle>
-                <Aunty house={house}></Aunty>
+                <h2>Grandpa</h2>
+                <p>House: {house}</p>
+                <button onClick={handleBuyHouse}>Buy A House</button>
+                <div style={{ display: 'flex' }}>
+                    <Father house={house} ornaments={ornaments}></Father>
+                    <Uncle house={house}></Uncle>
+                    <Aunty house={house}></Aunty>
+                </div>
             </div>
-        </div>
         </RingContext.Provider>
     );
 };
